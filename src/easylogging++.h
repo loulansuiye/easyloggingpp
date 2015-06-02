@@ -248,11 +248,11 @@
 #if (!defined(ELPP_DISABLE_LOGS))
 #   define ELPP_LOGGING_ENABLED 1
 #endif  // (!defined(ELPP_DISABLE_LOGS))
-#if (!defined(ELPP_DISABLE_DEBUG_LOGS) && (ELPP_LOGGING_ENABLED) && ((defined(_DEBUG)) || (!defined(NDEBUG))))
+#if ((defined(ELPP_ALWAYS_ENABLE_DEBUG_LOGS) && (ELPP_LOGGING_ENABLED)) || ((!defined(ELPP_DISABLE_DEBUG_LOGS) && ((defined(_DEBUG)) || (!defined(NDEBUG))))))
 #   define ELPP_DEBUG_LOG 1
 #else
 #   define ELPP_DEBUG_LOG 0
-#endif  // (!defined(ELPP_DISABLE_DEBUG_LOGS) && (ELPP_LOGGING_ENABLED) && ((defined(_DEBUG)) || (!defined(NDEBUG))))
+#endif  ((defined(ELPP_ALWAYS_ENABLE_DEBUG_LOGS) && (ELPP_LOGGING_ENABLED)) || ((!defined(ELPP_DISABLE_DEBUG_LOGS) && ((defined(_DEBUG)) || (!defined(NDEBUG))))))
 #if (!defined(ELPP_DISABLE_INFO_LOGS) && (ELPP_LOGGING_ENABLED))
 #   define ELPP_INFO_LOG 1
 #else
